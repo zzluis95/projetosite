@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <button id="toggle-theme" class="theme-btn">
+            <i class="fa-solid fa-sun"></i>
+        </button>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/logo.png" alt="Logo do Jogo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="galeria.html"><strong>Galeria</strong></a></li>
+            <li><a href="sobre.html"><strong>Sobre</strong></a></li>
+            <li><a href="contato.html"><strong>Contato</strong></a></li>
+            <li><a href="jogar.html"><strong>Jogar</strong></a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="card">
+            <h3>Sobre o Jogo</h3>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium, libero et fugit alias nostrum
+                blanditiis assumenda, eum inventore adipisci odit impedit consequuntur ex modi! Sapiente iste sint
+                accusamus harum accusantium.
+            </p>
+        </div>
+        <section class="features">
+            <div class="card">
+                <h3>Controles</h3>
+                <p>Controles simples sendo usado somente as setas e o botão de espaço</p>
+            </div>
+            <div class="card">
+                <h3>Preço</h3>
+                <p>Gratuito para todos independente de onde você esteja</p>
+            </div>
+            <div class="card">
+                <h3>Estilo</h3>
+                <p>Criado em pixel art para os amantes dos pixels/p>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+</body>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>Desenvolvido por zzluis95</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/zzluis95/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://discord.gg/uGp8hfuECT" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Seleciona o botão e o corpo da página
+        const themeBtn = document.getElementById('toggle-theme');
+        const body = document.body;
+
+        // Escuta o clique no botão
+        themeBtn.addEventListener('click', () => {
+            // Adiciona ou remove a classe .light-mode do body
+            body.classList.toggle('light-mode');
+
+            // Troca o ícone de sol para lua dependendo do modo
+            const icon = themeBtn.querySelector('i');
+            if (body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon'); // Vira uma lua no modo claro
+                themeBtn.style.borderColor = "#76008d";
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun'); // Volta a ser sol no modo escuro
+            }
+        });
+
+    </script>
+
+</footer>
+
+
+
+</html>

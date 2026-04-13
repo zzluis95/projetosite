@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLEEPY RUNNER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <button id="toggle-theme" class="theme-btn">
+            <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/logo.png" alt="Logo do Jogo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="galeria.html"><strong>Galeria</strong></a></li>
+            <li><a href="sobre.html"><strong>Sobre</strong></a></li>
+            <li><a href="contato.html"><strong>Contato</strong></a></li>
+            <li><a href="jogar.html"><strong>Jogar</strong></a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>SLEEPY RUNNER</h1>
+            <p>Jogue AGORA clicando abaixo</p>
+            <a href="jogar.html" class="btn-principal"><strong>JOGAR</strong></a>
+        </div>
+    </header>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Desenvolvido por zzluis95</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/zzluis95/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://discord.gg/uGp8hfuECT" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+        <script>
+            // 1. BLOCO DO MODO CLARO
+            const themeBtn = document.getElementById('toggle-theme');
+            const body = document.body;
+
+            themeBtn.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                const icon = themeBtn.querySelector('i');
+                if (body.classList.contains('light-mode')) {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    themeBtn.style.borderColor = "#76008d";
+                } else {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            });
+
+            // 2. BLOCO DA VERIFICAÇÃO DE IDADE (DO JEITO FEIO)
+            window.addEventListener('DOMContentLoaded', () => {
+                let resposta = prompt("Este site pode conter conteúdo para maiores de idade. Digite sua idade:");
+                let idade = parseInt(resposta);
+
+                // Se menor de 18, cancelou ou digitou algo inválido
+                if (idade < 18 || isNaN(idade)) {
+                    document.body.classList.add('menor-idade');
+                    alert("Como você é menor de idade (ou não informou a idade), o banner de fundo foi borrado.");
+                }
+            });
+        </script>
+    </footer>
+
+</body>
+
+</html>
